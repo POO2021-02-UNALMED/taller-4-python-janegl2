@@ -18,9 +18,15 @@ class Grupo:
         return cadena
 
     def listadoAsignaturas(self, **kwargs):
-        for x in kwargs.values():
-            self._asignaturas.append(Asignatura(x))
-
+        if(self._asignaturas is None):
+            lista = []
+            for x in kwargs.values():
+                lista.append(Asignatura(x))
+            self._asignaturas = lista
+        else:
+            for x in kwargs.values():
+                self._asignaturas.append(Asignatura(x))
+        
     def agregarAlumno(self, alumno, lista=None):
         if(lista is None):
             self.listadoAlumnos = [alumno]
