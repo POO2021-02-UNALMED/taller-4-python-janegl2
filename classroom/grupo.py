@@ -14,7 +14,7 @@ class Grupo:
         self.listadoAlumnos = estudiantes
         
     def __str__(self):
-        cadena = "Grupo de estudiantes: "+str(self.grupo)
+        cadena = "Grupo de estudiantes: "+str(self._grupo)
         return cadena
 
     def listadoAsignaturas(self, **kwargs):
