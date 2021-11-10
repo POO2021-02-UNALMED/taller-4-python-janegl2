@@ -23,12 +23,10 @@ class Grupo:
 
     def agregarAlumno(self, alumno, lista=None):
         if(lista is None):
-            lista = []
-            lista.append(alumno)
-            self.listadoAlumnos = self.listadoAlumnos + lista
-        else:
             self.listadoAlumnos = [alumno]
-
+        else:
+            lista.append(alumno)
+            self.listadoAlumnos = lista
     @ classmethod
     def asignarNombre(cls, nombre="Grado 6"):
         cls.grado = nombre
